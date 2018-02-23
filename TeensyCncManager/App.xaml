@@ -92,19 +92,6 @@
             <Setter Property="FontSize" Value="20" />
         </Style>
 
-        <Style BasedOn="{StaticResource ReadOnlyTextBox}" TargetType="TextBox" x:Key="ReadOnlyTextBoxA">
-            <Setter Property="Background" Value="#FFE5F1"></Setter>
-            <Setter Property="FontSize" Value="20" />
-        </Style>
-        <Style BasedOn="{StaticResource ReadOnlyTextBox}" TargetType="TextBox" x:Key="ReadOnlyTextBoxB">
-            <Setter Property="Background" Value="#F1FFE5"></Setter>
-            <Setter Property="FontSize" Value="20" />
-        </Style>
-        <Style BasedOn="{StaticResource ReadOnlyTextBox}" TargetType="TextBox" x:Key="ReadOnlyTextBoxC">
-            <Setter Property="Background" Value="#E5F1FF"></Setter>
-            <Setter Property="FontSize" Value="20" />
-        </Style>
-
         <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="ZeroButton">
             <Setter Property="Margin" Value="2"></Setter>
             <Setter Property="Padding" Value="0"></Setter>

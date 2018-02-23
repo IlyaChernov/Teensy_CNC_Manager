@@ -7,7 +7,7 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="280" />
+            <RowDefinition Height="150" />
             <RowDefinition Height="200" />
             <RowDefinition />
         </Grid.RowDefinitions>
@@ -25,10 +25,6 @@
                 <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-
             </Grid.RowDefinitions>
 
             <Label Grid.Row="0" Grid.Column="0" Content="Axis" Style="{StaticResource SmallTitleText}" />
@@ -39,23 +35,16 @@
             <Label Grid.Row="1" Grid.Column="0" Content="X" Style="{StaticResource LargeTitleText}" />
             <Label Grid.Row="2" Grid.Column="0" Content="Y" Style="{StaticResource LargeTitleText}" />
             <Label Grid.Row="3" Grid.Column="0" Content="Z" Style="{StaticResource LargeTitleText}" />
-            <Label Grid.Row="4" Grid.Column="0" Content="A" Style="{StaticResource LargeTitleText}" />
-            <Label Grid.Row="5" Grid.Column="0" Content="B" Style="{StaticResource LargeTitleText}" />
-            <Label Grid.Row="6" Grid.Column="0" Content="C" Style="{StaticResource LargeTitleText}" />
 
             <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding XPosition, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxX}" />
             <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding YPosition, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxY}" />
             <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding ZPosition, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxZ}" />
-            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding APosition, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxA}" />
-            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding BPosition, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxB}" />
-            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding CPosition, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxC}" />
+
 
             <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding XDestination, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxX}" />
             <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding YDestination, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxY}" />
             <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding ZDestination, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxZ}" />
-            <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding ADestination, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxA}" />
-            <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding BDestination, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxB}" />
-            <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding CDestination, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxC}" />
+
 
             <Button Grid.Row="1" Grid.Column="3" Style="{StaticResource ZeroButton}" Content="0" Command="{Binding ZeroDimensionCommand}">
                 <Button.CommandParameter>
@@ -72,22 +61,7 @@
                     <system:Int32>3</system:Int32>
                 </Button.CommandParameter>
             </Button>
-            <Button Grid.Row="4" Grid.Column="3" Style="{StaticResource ZeroButton}" Content="0" Command="{Binding ZeroDimensionCommand}">
-                <Button.CommandParameter>
-                    <system:Int32>4</system:Int32>
-                </Button.CommandParameter>
-            </Button>
-            <Button Grid.Row="5" Grid.Column="3" Style="{StaticResource ZeroButton}" Content="0" Command="{Binding ZeroDimensionCommand}">
-                <Button.CommandParameter>
-                    <system:Int32>5</system:Int32>
-                </Button.CommandParameter>
-            </Button>
-            <Button Grid.Row="6" Grid.Column="3" Style="{StaticResource ZeroButton}" Content="0" Command="{Binding ZeroDimensionCommand}">
-                <Button.CommandParameter>
-                    <system:Int32>6</system:Int32>
-                </Button.CommandParameter>
-            </Button>
-            <Button Grid.Row="7" Grid.Column="3" Style="{StaticResource ZeroButton}" Content="All 0" Command="{Binding ZeroDimensionCommand}">
+            <Button Grid.Row="4" Grid.Column="3" Style="{StaticResource ZeroButton}" Content="All 0" Command="{Binding ZeroDimensionCommand}">
                 <Button.CommandParameter>
                     <system:Int32>0</system:Int32>
                 </Button.CommandParameter>

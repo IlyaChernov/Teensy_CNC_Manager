@@ -23,11 +23,11 @@
 
         decimal ZPosition { get; set; }
 
-        decimal APosition { get; set; }
+        //decimal APosition { get; set; }
 
-        decimal BPosition { get; set; }
+        //decimal BPosition { get; set; }
 
-        decimal CPosition { get; set; }
+        //decimal CPosition { get; set; }
 
         decimal XDestination { get; set; }
 
@@ -35,11 +35,11 @@
 
         decimal ZDestination { get; set; }
 
-        decimal ADestination { get; set; }
+        //decimal ADestination { get; set; }
 
-        decimal BDestination { get; set; }
+        //decimal BDestination { get; set; }
 
-        decimal CDestination { get; set; }
+        //decimal CDestination { get; set; }
 
         long XPositionSteps { get; set; }
 
@@ -47,11 +47,11 @@
 
         long ZPositionSteps { get; set; }
 
-        long APositionSteps { get; set; }
+        //long APositionSteps { get; set; }
 
-        long BPositionSteps { get; set; }
+        //long BPositionSteps { get; set; }
 
-        long CPositionSteps { get; set; }
+        //long CPositionSteps { get; set; }
 
         long XDestinationSteps { get; set; }
 
@@ -59,11 +59,11 @@
 
         long ZDestinationSteps { get; set; }
 
-        long ADestinationSteps { get; set; }
+        //long ADestinationSteps { get; set; }
 
-        long BDestinationSteps { get; set; }
+        //long BDestinationSteps { get; set; }
 
-        long CDestinationSteps { get; set; }
+        //long CDestinationSteps { get; set; }
 
         int DeviceQueueLength { get; set; }
 

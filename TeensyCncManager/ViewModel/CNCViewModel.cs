@@ -236,8 +236,9 @@
             get
             {
                 return IsConnected && !IsRunning && DeviceEngineState != EngineState.EmergencyStopped &&
-                    XPosition == XDestination && YPosition == YDestination && ZPosition == ZDestination &&
-                    APosition == ADestination && BPosition == BDestination && CPosition == CDestination;
+                    XPosition == XDestination && YPosition == YDestination && ZPosition == ZDestination; 
+                //&&
+                  //  APosition == ADestination && BPosition == BDestination && CPosition == CDestination;
             }
         }
 
@@ -380,53 +381,53 @@
             }
         }
 
-        public decimal APosition
-        {
-            get
-            {
-                return Gs.APosition;
-            }
-            set
-            {
-                if (Gs.APosition != value)
-                {
-                    Gs.APosition = value;
-                    OnPropertyChangedAuto();
-                }
-            }
-        }
+        //public decimal APosition
+        //{
+        //    get
+        //    {
+        //        return Gs.APosition;
+        //    }
+        //    set
+        //    {
+        //        if (Gs.APosition != value)
+        //        {
+        //            Gs.APosition = value;
+        //            OnPropertyChangedAuto();
+        //        }
+        //    }
+        //}
 
-        public decimal BPosition
-        {
-            get
-            {
-                return Gs.BPosition;
-            }
-            set
-            {
-                if (Gs.BPosition != value)
-                {
-                    Gs.BPosition = value;
-                    OnPropertyChangedAuto();
-                }
-            }
-        }
+        //public decimal BPosition
+        //{
+        //    get
+        //    {
+        //        return Gs.BPosition;
+        //    }
+        //    set
+        //    {
+        //        if (Gs.BPosition != value)
+        //        {
+        //            Gs.BPosition = value;
+        //            OnPropertyChangedAuto();
+        //        }
+        //    }
+        //}
 
-        public decimal CPosition
-        {
-            get
-            {
-                return Gs.CPosition;
-            }
-            set
-            {
-                if (Gs.CPosition != value)
-                {
-                    Gs.CPosition = value;
-                    OnPropertyChangedAuto();
-                }
-            }
-        }
+        //public decimal CPosition
+        //{
+        //    get
+        //    {
+        //        return Gs.CPosition;
+        //    }
+        //    set
+        //    {
+        //        if (Gs.CPosition != value)
+        //        {
+        //            Gs.CPosition = value;
+        //            OnPropertyChangedAuto();
+        //        }
+        //    }
+        //}
 
         public decimal XDestination
         {
@@ -464,41 +465,41 @@
             }
         }
 
-        public decimal ADestination
-        {
-            get
-            {
-                return Gs.ADestination;
-            }
-            set
-            {
-                Gs.ADestination = value; OnPropertyChangedAuto();
-            }
-        }
+        //public decimal ADestination
+        //{
+        //    get
+        //    {
+        //        return Gs.ADestination;
+        //    }
+        //    set
+        //    {
+        //        Gs.ADestination = value; OnPropertyChangedAuto();
+        //    }
+        //}
 
-        public decimal BDestination
-        {
-            get
-            {
-                return Gs.BDestination;
-            }
-            set
-            {
-                Gs.BDestination = value; OnPropertyChangedAuto();
-            }
-        }
+        //public decimal BDestination
+        //{
+        //    get
+        //    {
+        //        return Gs.BDestination;
+        //    }
+        //    set
+        //    {
+        //        Gs.BDestination = value; OnPropertyChangedAuto();
+        //    }
+        //}
 
-        public decimal CDestination
-        {
-            get
-            {
-                return Gs.CDestination;
-            }
-            set
-            {
-                Gs.CDestination = value; OnPropertyChangedAuto();
-            }
-        }
+        //public decimal CDestination
+        //{
+        //    get
+        //    {
+        //        return Gs.CDestination;
+        //    }
+        //    set
+        //    {
+        //        Gs.CDestination = value; OnPropertyChangedAuto();
+        //    }
+        //}
 
         public int DeviceQueueLength
         {
@@ -713,44 +714,44 @@
             }
         }
 
-        public long APositionSteps
-        {
-            get
-            {
-                return Gs.APositionSteps;
-            }
-            set
-            {
-                Gs.APositionSteps = value;
-                OnPropertyChangedAuto();
-            }
-        }
+        //public long APositionSteps
+        //{
+        //    get
+        //    {
+        //        return Gs.APositionSteps;
+        //    }
+        //    set
+        //    {
+        //        Gs.APositionSteps = value;
+        //        OnPropertyChangedAuto();
+        //    }
+        //}
 
-        public long BPositionSteps
-        {
-            get
-            {
-                return Gs.BPositionSteps;
-            }
-            set
-            {
-                Gs.BPositionSteps = value;
-                OnPropertyChangedAuto();
-            }
-        }
+        //public long BPositionSteps
+        //{
+        //    get
+        //    {
+        //        return Gs.BPositionSteps;
+        //    }
+        //    set
+        //    {
+        //        Gs.BPositionSteps = value;
+        //        OnPropertyChangedAuto();
+        //    }
+        //}
 
-        public long CPositionSteps
-        {
-            get
-            {
-                return Gs.CPositionSteps;
-            }
-            set
-            {
-                Gs.CPositionSteps = value;
-                OnPropertyChangedAuto();
-            }
-        }
+        //public long CPositionSteps
+        //{
+        //    get
+        //    {
+        //        return Gs.CPositionSteps;
+        //    }
+        //    set
+        //    {
+        //        Gs.CPositionSteps = value;
+        //        OnPropertyChangedAuto();
+        //    }
+        //}
 
         public long XDestinationSteps
         {
@@ -791,44 +792,44 @@
             }
         }
 
-        public long ADestinationSteps
-        {
-            get
-            {
-                return Gs.ADestinationSteps;
-            }
-            set
-            {
-                Gs.ADestinationSteps = value;
-                OnPropertyChangedAuto();
-            }
-        }
+        //public long ADestinationSteps
+        //{
+        //    get
+        //    {
+        //        return Gs.ADestinationSteps;
+        //    }
+        //    set
+        //    {
+        //        Gs.ADestinationSteps = value;
+        //        OnPropertyChangedAuto();
+        //    }
+        //}
 
-        public long BDestinationSteps
-        {
-            get
-            {
-                return Gs.BDestinationSteps;
-            }
-            set
-            {
-                Gs.BDestinationSteps = value;
-                OnPropertyChangedAuto();
-            }
-        }
+        //public long BDestinationSteps
+        //{
+        //    get
+        //    {
+        //        return Gs.BDestinationSteps;
+        //    }
+        //    set
+        //    {
+        //        Gs.BDestinationSteps = value;
+        //        OnPropertyChangedAuto();
+        //    }
+        //}
 
-        public long CDestinationSteps
-        {
-            get
-            {
-                return Gs.CDestinationSteps;
-            }
-            set
-            {
-                Gs.CDestinationSteps = value;
-                OnPropertyChangedAuto();
-            }
-        }
+        //public long CDestinationSteps
+        //{
+        //    get
+        //    {
+        //        return Gs.CDestinationSteps;
+        //    }
+        //    set
+        //    {
+        //        Gs.CDestinationSteps = value;
+        //        OnPropertyChangedAuto();
+        //    }
+        //}
 
         private void ZeroDimension(object obj)
         {
