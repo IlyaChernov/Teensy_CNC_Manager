@@ -1,0 +1,330 @@
+﻿<Window x:Class="TeensyCncManager.MainWindow" Icon="MainAppIco.ico" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:viewModel="clr-namespace:TeensyCncManager.ViewModel" xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:extensions="clr-namespace:TeensyCncManager.Extensions" mc:Ignorable="d" d:DataContext="{d:DesignInstance Type=viewModel:CNCViewModel, IsDesignTimeCreatable=False}" Title="Teensy CNC Manager" MinHeight="800" MinWidth="1200" Height="456" Width="430"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="280" />
+            <RowDefinition Height="200" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15" />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="Axis" Style="{StaticResource SmallTitleText}" />
+            <Label Grid.Row="0" Grid.Column="1" Content="Current" Style="{StaticResource SmallTitleText}" />
+            <Label Grid.Row="0" Grid.Column="2" Content="Destination" Style="{StaticResource SmallTitleText}" />
+            <Label Grid.Row="0" Grid.Column="4" Content="Set Zero" Style="{StaticResource SmallTitleText}" />
+
+            <Label Grid.Row="1" Grid.Column="0" Content="X" Style="{StaticResource LargeTitleText}" />
+            <Label Grid.Row="2" Grid.Column="0" Content="Y" Style="{StaticResource LargeTitleText}" />
+            <Label Grid.Row="3" Grid.Column="0" Content="Z" Style="{StaticResource LargeTitleText}" />
+            <Label Grid.Row="4" Grid.Column="0" Content="A" Style="{StaticResource LargeTitleText}" />
+            <Label Grid.Row="5" Grid.Column="0" Content="B" Style="{StaticResource LargeTitleText}" />
+            <Label Grid.Row="6" Grid.Column="0" Content="C" Style="{StaticResource LargeTitleText}" />
+
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding XPosition, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxX}" />
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding YPosition, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxY}" />
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding ZPosition, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxZ}" />
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding APosition, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxA}" />
+            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding BPosition, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxB}" />
+            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding CPosition, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxC}" />
+
+            <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding XDestination, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxX}" />
+            <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding YDestination, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxY}" />
+            <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding ZDestination, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxZ}" />
+            <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding ADestination, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxA}" />
+            <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding BDestination, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxB}" />
+            <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding CDestination, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ReadOnlyTextBoxC}" />
+
+            <Button Grid.Row="1" Grid.Column="3" Style="{StaticResource ZeroButton}" Content="0" Command="{Binding ZeroDimensionCommand}">
+                <Button.CommandParameter>
+                    <system:Int32>1</system:Int32>
+                </Button.CommandParameter>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="3" Style="{StaticResource ZeroButton}" Content="0" Command="{Binding ZeroDimensionCommand}">
+                <Button.CommandParameter>
+                    <system:Int32>2</system:Int32>
+                </Button.CommandParameter>
+            </Button>
+            <Button Grid.Row="3" Grid.Column="3" Style="{StaticResource ZeroButton}" Content="0" Command="{Binding ZeroDimensionCommand}">
+                <Button.CommandParameter>
+                    <system:Int32>3</system:Int32>
+                </Button.CommandParameter>
+            </Button>
+            <Button Grid.Row="4" Grid.Column="3" Style="{StaticResource ZeroButton}" Content="0" Command="{Binding ZeroDimensionCommand}">
+                <Button.CommandParameter>
+                    <system:Int32>4</system:Int32>
+                </Button.CommandParameter>
+            </Button>
+            <Button Grid.Row="5" Grid.Column="3" Style="{StaticResource ZeroButton}" Content="0" Command="{Binding ZeroDimensionCommand}">
+                <Button.CommandParameter>
+                    <system:Int32>5</system:Int32>
+                </Button.CommandParameter>
+            </Button>
+            <Button Grid.Row="6" Grid.Column="3" Style="{StaticResource ZeroButton}" Content="0" Command="{Binding ZeroDimensionCommand}">
+                <Button.CommandParameter>
+                    <system:Int32>6</system:Int32>
+                </Button.CommandParameter>
+            </Button>
+            <Button Grid.Row="7" Grid.Column="3" Style="{StaticResource ZeroButton}" Content="All 0" Command="{Binding ZeroDimensionCommand}">
+                <Button.CommandParameter>
+                    <system:Int32>0</system:Int32>
+                </Button.CommandParameter>
+            </Button>
+
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0" RowSpan="2">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="260" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TabControl Grid.Row="0">
+                <TabItem Header="Linear">
+                    <Grid>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60" />
+                                <RowDefinition />
+                                <RowDefinition Height="80" />
+                                <RowDefinition />
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="80" />
+
+
+                            </Grid.ColumnDefinitions>
+                            <GroupBox Grid.Row="0" Header="Used Distances" Grid.Column="0" Grid.ColumnSpan="4">
+
+                                <WrapPanel />
+
+                            </GroupBox>
+
+
+
+                            <Button Grid.Row="1" Grid.Column="0" Content="{StaticResource X-Y+}" Command="{Binding ManualGCodeMinusPlusCommand}" CommandParameter="X{0} Y{1} F{3}" />
+                            <Button Grid.Row="2" Grid.Column="0" Content="{StaticResource X-}" Command="{Binding ManualGCodeMinusCommand}" CommandParameter="X{0} F{3}" />
+                            <Button Grid.Row="3" Grid.Column="0" Content="{StaticResource X-Y-}" Command="{Binding ManualGCodeMinusCommand}" CommandParameter="X{0} Y{1} F{3}" />
+
+                            <Button Grid.Row="1" Grid.Column="1" Content="{StaticResource Y+}" Command="{Binding ManualGCodePlusCommand}" CommandParameter="Y{1} F{3}" />
+                            <Button Grid.Row="2" Grid.Column="1" Content="{StaticResource AllHome}" Command="{Binding ManualHomeGCodeCommand}" CommandParameter="X0 Y0 Z0 F{3}" />
+                            <Button Grid.Row="3" Grid.Column="1" Content="{StaticResource Y-}" Command="{Binding ManualGCodeMinusCommand}" CommandParameter="Y{1} F{3}" />
+
+                            <Button Grid.Row="1" Grid.Column="2" Content="{StaticResource X+Y+}" Command="{Binding ManualGCodePlusCommand}" CommandParameter="X{0} Y{1} F{3}" />
+                            <Button Grid.Row="2" Grid.Column="2" Content="{StaticResource X+}" Command="{Binding ManualGCodePlusCommand}" CommandParameter="X{0} F{3}" />
+                            <Button Grid.Row="3" Grid.Column="2" Content="{StaticResource X+Y-}" Command="{Binding ManualGCodePlusMinusCommand}" CommandParameter="X{0} Y{1} F{3}" />
+
+                            <Button Grid.Row="1" Grid.Column="3" Content="{StaticResource Z+}" Command="{Binding ManualGCodePlusCommand}" CommandParameter="Z{2} F{3}" />
+                            <Button Grid.Row="2" Grid.Column="3" Content="{StaticResource ZHome}" Command="{Binding ManualHomeGCodeCommand}" CommandParameter="Z0 F{3}" />
+                            <Button Grid.Row="3" Grid.Column="3" Content="{StaticResource Z-}" Command="{Binding ManualGCodeMinusCommand}" CommandParameter="Z{2} F{3}" />
+                        </Grid>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Rotational">
+                    <Grid />
+                </TabItem>
+                <TabItem Header="Spindle">
+                    <Grid />
+                </TabItem>
+
+            </TabControl>
+
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="24" />
+                    <RowDefinition Height="32" />
+                    <RowDefinition Height="24" />
+                    <RowDefinition Height="32" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Content="Speed" />
+                <Slider Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Minimum="1" Maximum="600" TickFrequency="0.013" TickPlacement="Both"  IsEnabled="{Binding IsConnected}" Value="{Binding Speed}" IsSnapToTickEnabled="True" />
+                <TextBox Grid.Column="2" Grid.Row="1" IsEnabled="{Binding IsConnected}" Text="{Binding Speed, UpdateSourceTrigger=PropertyChanged}" Margin="0,5" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" />
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Distance" />
+                <Slider Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Minimum="0.01" Maximum="600" TickFrequency="10" TickPlacement="Both" IsEnabled="{Binding IsConnected}" Value="{Binding Distance}" />
+                <TextBox Grid.Column="2" Grid.Row="3" IsEnabled="{Binding IsConnected}" Text="{Binding Distance, UpdateSourceTrigger=LostFocus}" Margin="0,5" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" LostFocus="UIElement_OnLostFocus" />
+
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="0" RowSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="36" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="72" />
+                <RowDefinition />
+                <RowDefinition Height="160" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="2" Margin="0, 5,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Style="{StaticResource ControlButton}" Content="{StaticResource PlayPause}" Padding="2" Margin="0,1,1,1" Command="{Binding StartPauseWorkCommand}" />
+                <Button Grid.Column="1" Style="{StaticResource ControlButton}" Content="{StaticResource Stop}" Padding="2" Margin="1" Command="{Binding StopWorkCommand}" />
+                <Button Grid.Column="2" Content="{StaticResource Reload}" Margin="1" Click="Button_PreprocessGCode_OnClick">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            Repost G-Code
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+            </Grid>
+            <TabControl Grid.Row="3">
+                <TabItem Header="G-Code">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1000*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <avalonEdit:TextEditor xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit" Name="GCodeEditor" FontFamily="Consolas" FontSize="10pt" Margin="-1,0,1,0" ShowLineNumbers="True" >
+                            <i:Interaction.Behaviors>
+                                <extensions:AvalonEditBehaviour BindingText="{Binding GCode, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource ListToStringConverter}}"/>
+                            </i:Interaction.Behaviors>
+                        </avalonEdit:TextEditor>
+
+                        <DataGrid Grid.Row="1" Visibility="Collapsed" AlternatingRowBackground="AliceBlue" ItemsSource="{Binding GCode, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" Style="{StaticResource DataGridStyle}" CanUserAddRows="True" CanUserDeleteRows="True" IsReadOnly="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="G-Code Frame" Binding="{Binding Mode=OneWay}" Width="*" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+
+                </TabItem>
+                <TabItem Header="Preprocessed">
+                    <DataGrid AlternatingRowBackground="AliceBlue" ItemsSource="{Binding PreprocessedGCodes, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" AutoGenerateColumns="False" Style="{StaticResource DataGridStyle}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="№" Binding="{Binding lineNumber, Mode=OneWay}" Width="50" >
+                                <DataGridTextColumn.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding DeviceLineNumber}" Value="0">
+                                                <Setter Property="Foreground" Value="Aquamarine"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGridTextColumn.CellStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="G-Code Frame" Binding="{Binding code, Mode=OneWay}" Width="*" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+                <TabItem Header="2D plot">
+                    <Grid>
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                            <Path MouseWheel="UIElement_OnMouseWheel" x:Name="FlatPlotPath" Stroke="Black" HorizontalAlignment="Center" VerticalAlignment="Center" StrokeThickness="2" />
+                            <!--<Path MouseWheel="UIElement_OnMouseWheel" x:Name="FlatPlotPath" 
+                                  Data="{Binding MovementPoints, Converter={StaticResource ResourceKey=PointsToPathConverter}}"
+                                  Stroke="Black" HorizontalAlignment="Center" VerticalAlignment="Center" StrokeThickness="2" />-->
+                        </ScrollViewer>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="3D space">
+                    <Grid />
+                </TabItem>
+                <TabItem Header="Options">
+                    <ScrollViewer>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="105" />
+                                <ColumnDefinition Width="132" />
+                                <ColumnDefinition Width="132" />
+                                <ColumnDefinition Width="26" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="26" />
+                                <RowDefinition Height="26" />
+                                <RowDefinition Height="26" />
+                                <RowDefinition Height="26" />
+                                <RowDefinition Height="26" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Label Content="CNC Device" Grid.Row="0" Grid.Column="0" Style="{StaticResource OptionsTitleText}" />
+                            <Label Content="Steps per rev." Grid.Row="1" Grid.Column="0" Style="{StaticResource OptionsTitleText}" />
+                            <Label Content="Leadscrew pitch" Grid.Row="2" Grid.Column="0" Style="{StaticResource OptionsTitleText}" />
+                            <Label Content="Default speed" Grid.Row="3" Grid.Column="0" Style="{StaticResource OptionsTitleText}" />
+                            <Label Content="Device buffer size" Grid.Row="4" Grid.Column="0" Style="{StaticResource OptionsTitleText}" />
+
+                            <ComboBox Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Margin="1,1,0,1" HorizontalAlignment="Left" Width="262" ItemsSource="{Binding HIDDevices, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding CNCDeviceHIDPath, UpdateSourceTrigger=PropertyChanged}"></ComboBox>
+                            <Button Grid.Column="3" Grid.Row="0" Content="{StaticResource Reload}" Margin="1" Click="ButtonReloadCNCDevicesList_OnClick"></Button>
+
+                            <TextBox Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="{Binding StepsPerRevolution, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource OptionsTextBox}" />
+                            <TextBox Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="{Binding LeadscrewPitch, UpdateSourceTrigger=LostFocus}" Style="{StaticResource OptionsTextBox}" LostFocus="UIElement_OnLostFocus" />
+                            <TextBox Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="{Binding DefaultSpeed, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource OptionsTextBox}" />
+                            <TextBox Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" Text="{Binding DefaultQueueSize, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource OptionsTextBox}" />
+
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+
+            </TabControl>
+            <GroupBox Grid.Row="4" Header="Log">
+                <DataGrid AlternatingRowBackground="AliceBlue" ItemsSource="{Binding Log, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" Style="{StaticResource DataGridStyle}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Mode=OneWay}" Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Content="Load File" Grid.Column="1" Margin="1,2,1,2" Click="Button_OpenGCodeFile_OnClick" />
+
+                <TextBox Grid.Column="2" Text="{Binding FileName, UpdateSourceTrigger=PropertyChanged}" Padding="2" Style="{StaticResource ReadOnlyTextBox}" />
+
+                <Button Grid.Row="0" Grid.Column="0" Content="{StaticResource UsbHid}" Margin="0,2,1,2" />
+                <Button Grid.Row="0" Grid.Column="0" Content="{StaticResource UsbHid}" Margin="0,2,1,2" Background="{Binding DeviceEngineState, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource EngineStateToColor}}" Visibility="{Binding IsConnected, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource BoolToVisibility }}" />
+            </Grid>
+            <ProgressBar Maximum="{Binding ProgressMaximum, UpdateSourceTrigger=PropertyChanged}" Value="{Binding Progress, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Margin="0,5">
+                <ProgressBar.ToolTip>
+                    <MultiBinding Converter="{StaticResource ProgressValueConverter}" UpdateSourceTrigger="PropertyChanged">
+                        <Binding Path="ProgressMaximum" />
+                        <Binding Path="Progress" />
+                    </MultiBinding>
+                </ProgressBar.ToolTip>
+            </ProgressBar>
+        </Grid>
+
+    </Grid>
+</Window>

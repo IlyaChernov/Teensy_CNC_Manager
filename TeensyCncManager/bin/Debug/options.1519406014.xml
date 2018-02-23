@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<GlobalState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CNCDeviceHIDPath>\\?\hid#vid_16c0&amp;pid_0486&amp;mi_00#8&amp;d401ae2&amp;0&amp;0000#{4d1e55b2-f16f-11cf-88cb-001111000030}</CNCDeviceHIDPath>
+  <LeadscrewPitch>2.5</LeadscrewPitch>
+  <StepsPerRevolution>400</StepsPerRevolution>
+  <DefaultSpeed>200</DefaultSpeed>
+  <DefaultQueueSize>2</DefaultQueueSize>
+</GlobalState>

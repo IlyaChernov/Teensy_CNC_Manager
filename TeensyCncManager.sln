@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeensyCncManager", "TeensyCncManager\TeensyCncManager.csproj", "{D3C3775E-778D-4ED5-9BC3-EE2243260D41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6AAD4AD9-C288-449D-AF20-A45A330D8976}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeensyCncManager.HidWrapper", "TeensyCncManager.HidWrapper\TeensyCncManager.HidWrapper.csproj", "{6F45B4D6-AE49-4A20-AB05-D9B4D9201164}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeensyCNCManager.Core", "TeensyCNCManager.Core\TeensyCNCManager.Core.csproj", "{75BB28A3-AF61-4339-84E3-CAA7E05914B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeensyCncManager.Test", "TeensyCncManager.Test\TeensyCncManager.Test.csproj", "{DB683509-CD6D-41E3-AD22-005E734A758A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3C3775E-778D-4ED5-9BC3-EE2243260D41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3C3775E-778D-4ED5-9BC3-EE2243260D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3C3775E-778D-4ED5-9BC3-EE2243260D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3C3775E-778D-4ED5-9BC3-EE2243260D41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F45B4D6-AE49-4A20-AB05-D9B4D9201164}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F45B4D6-AE49-4A20-AB05-D9B4D9201164}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F45B4D6-AE49-4A20-AB05-D9B4D9201164}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F45B4D6-AE49-4A20-AB05-D9B4D9201164}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75BB28A3-AF61-4339-84E3-CAA7E05914B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75BB28A3-AF61-4339-84E3-CAA7E05914B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75BB28A3-AF61-4339-84E3-CAA7E05914B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75BB28A3-AF61-4339-84E3-CAA7E05914B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB683509-CD6D-41E3-AD22-005E734A758A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB683509-CD6D-41E3-AD22-005E734A758A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB683509-CD6D-41E3-AD22-005E734A758A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB683509-CD6D-41E3-AD22-005E734A758A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CF7A691-5F47-451A-BE5F-570721678239}
+	EndGlobalSection
+EndGlobal

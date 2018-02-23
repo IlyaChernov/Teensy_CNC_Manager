@@ -1,0 +1,119 @@
+﻿<Application x:Class="TeensyCncManager.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:viewModelUtils="clr-namespace:TeensyCncManager.ViewModelUtils"
+             xmlns:extensions="clr-namespace:TeensyCNCManager.Core.Extensions;assembly=TeensyCNCManager.Core"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibility"></BooleanToVisibilityConverter>
+        <extensions:EngineStateToColorConverter x:Key="EngineStateToColor"></extensions:EngineStateToColorConverter>
+        
+        <viewModelUtils:ProgressValueConverter x:Key="ProgressValueConverter" />        
+        <viewModelUtils:PointsToPathConverter x:Key="PointsToPathConverter"/>
+        <viewModelUtils:DistanceConverter x:Key="DistanceConverter" />
+        <viewModelUtils:ListToStringConverter x:Key="ListToStringConverter" />
+
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Key="X+" Source="Images/X+.png"></Image>
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Key="X-" Source="Images/X-.png"></Image>
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Key="Y+" Source="Images/Y+.png"></Image>
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Key="Y-" Source="Images/Y-.png"></Image>
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Key="Z+" Source="Images/Z+.png"></Image>
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Key="Z-" Source="Images/Z-.png"></Image>
+
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Key="X+Y+" Source="Images/X+Y+.png"></Image>
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Key="X+Y-" Source="Images/X+Y-.png"></Image>
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Key="X-Y+" Source="Images/X-Y+.png"></Image>
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Key="X-Y-" Source="Images/X-Y-.png"></Image>
+
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Shared="False" x:Key="Reload" Source="Images/reload.png"></Image>
+
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Shared="False" x:Key="UsbHid" Source="Images/usbhid.png"></Image>
+
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Key="AllHome" Source="Images/Home.png"></Image>
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Key="ZHome" Source="Images/Home Z.png"></Image>
+
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Key="PlayPause" Source="Images/playpause.png"></Image>
+
+        <Image RenderOptions.BitmapScalingMode="HighQuality" x:Key="Stop" Source="Images/stop.png"></Image>
+
+        <Style BasedOn="{StaticResource {x:Type Label}}" TargetType="Label" x:Key="SmallTitleText">
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="Foreground" Value="DimGray" />
+            <Setter Property="Padding" Value="0"></Setter>
+            <Setter Property="Margin" Value="0"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        </Style>
+
+        <Style BasedOn="{StaticResource {x:Type Label}}" TargetType="Label" x:Key="OptionsTitleText">           
+            <Setter Property="HorizontalContentAlignment" Value="Right"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        </Style>
+
+        <Style BasedOn="{StaticResource {x:Type DataGrid}}" TargetType="DataGrid" x:Key="DataGridStyle">
+            <Setter Property="HeadersVisibility" Value="None"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="GridLinesVisibility" Value="None"></Setter>
+            <Setter Property="AutoGenerateColumns" Value="False"></Setter>
+        </Style>
+
+        <Style BasedOn="{StaticResource {x:Type TextBox}}" TargetType="TextBox" x:Key="ReadOnlyTextBox">
+            <Setter Property="FontSize" Value="10" />
+            <Setter Property="Foreground" Value="DimGray" />
+            <Setter Property="Padding" Value="5,0"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Right"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="BorderThickness" Value="1"></Setter>
+            <Setter Property="IsReadOnly" Value="True"></Setter>
+            <Setter Property="Background" Value="GhostWhite"></Setter>
+            <Setter Property="Margin" Value="0,2,0,2"></Setter>
+        </Style>
+
+        <Style BasedOn="{StaticResource  SmallTitleText}" TargetType="Label" x:Key="LargeTitleText">
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+
+        <Style BasedOn="{StaticResource {x:Type TextBox}}" TargetType="TextBox" x:Key="OptionsTextBox">      
+            <Setter Property="HorizontalContentAlignment" Value="Right"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>       
+            <Setter Property="Margin" Value="1"></Setter>
+        </Style>
+
+        <Style BasedOn="{StaticResource ReadOnlyTextBox}" TargetType="TextBox" x:Key="ReadOnlyTextBoxX">
+            <Setter Property="Background" Value="#FFE1E1"></Setter>
+            <Setter Property="FontSize" Value="20" />
+            
+        </Style>
+        <Style BasedOn="{StaticResource ReadOnlyTextBox}" TargetType="TextBox" x:Key="ReadOnlyTextBoxY">
+            <Setter Property="Background" Value="#E1FFC8"></Setter>
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+        <Style BasedOn="{StaticResource ReadOnlyTextBox}" TargetType="TextBox" x:Key="ReadOnlyTextBoxZ">
+            <Setter Property="Background" Value="#C8E1FF"></Setter>
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+
+        <Style BasedOn="{StaticResource ReadOnlyTextBox}" TargetType="TextBox" x:Key="ReadOnlyTextBoxA">
+            <Setter Property="Background" Value="#FFE5F1"></Setter>
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+        <Style BasedOn="{StaticResource ReadOnlyTextBox}" TargetType="TextBox" x:Key="ReadOnlyTextBoxB">
+            <Setter Property="Background" Value="#F1FFE5"></Setter>
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+        <Style BasedOn="{StaticResource ReadOnlyTextBox}" TargetType="TextBox" x:Key="ReadOnlyTextBoxC">
+            <Setter Property="Background" Value="#E5F1FF"></Setter>
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="ZeroButton">
+            <Setter Property="Margin" Value="2"></Setter>
+            <Setter Property="Padding" Value="0"></Setter>
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+
+        <Style BasedOn="{StaticResource {x:Type Button}}" TargetType="Button" x:Key="ControlButton">
+            <Setter Property="Margin" Value="2"></Setter>
+            <Setter Property="Padding" Value="0"></Setter>            
+        </Style>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,16 @@
+C:\Projects\Hardware\TEENSY_CNC_Manager\TeensyCNCManager.Core\bin\Release\TeensyCNCManager.Core.dll.config
+C:\Projects\Hardware\TEENSY_CNC_Manager\TeensyCNCManager.Core\bin\Release\TeensyCNCManager.Core.dll
+C:\Projects\Hardware\TEENSY_CNC_Manager\TeensyCNCManager.Core\bin\Release\TeensyCNCManager.Core.pdb
+C:\Projects\Hardware\TEENSY_CNC_Manager\TeensyCNCManager.Core\bin\Release\HidLibrary.dll
+C:\Projects\Hardware\TEENSY_CNC_Manager\TeensyCNCManager.Core\bin\Release\TeensyCncManager.HidWrapper.dll
+C:\Projects\Hardware\TEENSY_CNC_Manager\TeensyCNCManager.Core\bin\Release\System.Reactive.Linq.dll
+C:\Projects\Hardware\TEENSY_CNC_Manager\TeensyCNCManager.Core\bin\Release\System.Reactive.Core.dll
+C:\Projects\Hardware\TEENSY_CNC_Manager\TeensyCNCManager.Core\bin\Release\System.Reactive.Interfaces.dll
+C:\Projects\Hardware\TEENSY_CNC_Manager\TeensyCNCManager.Core\bin\Release\TeensyCncManager.HidWrapper.pdb
+C:\Projects\Hardware\TEENSY_CNC_Manager\TeensyCNCManager.Core\bin\Release\HidLibrary.pdb
+C:\Projects\Hardware\TEENSY_CNC_Manager\TeensyCNCManager.Core\bin\Release\System.Reactive.Linq.xml
+C:\Projects\Hardware\TEENSY_CNC_Manager\TeensyCNCManager.Core\bin\Release\System.Reactive.Core.xml
+C:\Projects\Hardware\TEENSY_CNC_Manager\TeensyCNCManager.Core\bin\Release\System.Reactive.Interfaces.xml
+C:\Projects\Hardware\TEENSY_CNC_Manager\TeensyCNCManager.Core\obj\Release\TeensyCNCManager.Core.csprojResolveAssemblyReference.cache
+C:\Projects\Hardware\TEENSY_CNC_Manager\TeensyCNCManager.Core\obj\Release\TeensyCNCManager.Core.dll
+C:\Projects\Hardware\TEENSY_CNC_Manager\TeensyCNCManager.Core\obj\Release\TeensyCNCManager.Core.pdb
