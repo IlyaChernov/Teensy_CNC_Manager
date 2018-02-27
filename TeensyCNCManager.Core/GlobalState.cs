@@ -183,24 +183,25 @@
 
             string path = Directory.GetCurrentDirectory();
             var directory = new DirectoryInfo(path);
+            if (directory.GetFiles().Where(x=>x.Name.StartsWith("options.")).Count() > 0)
+            {
+                var myFile = (from f in directory.GetFiles()
+                              where f.Name.StartsWith("options.")
+                              orderby f.LastWriteTime descending
+                              select f).First();
 
-            var myFile = (from f in directory.GetFiles()
-                          where f.Name.StartsWith("options.")
-                          orderby f.LastWriteTime descending
-                          select f).First();
-
-            if (File.Exists(myFile.Name))
-                using (var fs = new FileStream(myFile.Name, FileMode.Open))
-                {
-
-                    try
+                if (File.Exists(myFile.Name))
+                    using (var fs = new FileStream(myFile.Name, FileMode.Open))
                     {
-                        result = (GlobalState)formatter.Deserialize(fs);
+
+                        try
+                        {
+                            result = (GlobalState)formatter.Deserialize(fs);
+                        }
+                        catch { }
+
                     }
-                    catch { }
-
-                }
-
+            }
             return result;
         }
     }
