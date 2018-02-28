@@ -97,6 +97,7 @@
                         if (PreprocessedGCodes.Count > Progress)
                         {
                             cncDevice.SendReport(PreprocessedGCodes[(int)Progress].code);
+                            Gs.DeviceQueueLength++;
                             var code = GParser.Parse(PreprocessedGCodes[(int)Progress].code, LastPreprocessedGCode ?? new G00());
                             LastPreprocessedGCode = code;
                             //var szk = new LinearMovementCommand { LineNumber = (int)Progress, XYZSpeed = Gs.DistanceToSteps(code.FSpeed.HasValue ? code.FSpeed.Value : 0) / 60d, XPos = Gs.DistanceToSteps(code.XDestination), YPos = Gs.DistanceToSteps(code.YDestination), ZPos = Gs.DistanceToSteps(code.ZDestination) };
@@ -108,6 +109,7 @@
                     if (!Gs.IsRunning && ProcessingGCodeList.Any())
                     {
                         cncDevice.SendReport(ProcessingGCodeList.Dequeue());
+                        Gs.DeviceQueueLength++;
                         //var code = GParser.Parse(ProcessingGCodeList.Dequeue(), new G00());
                         //var szk = new ImmediateLinearMovementCommand { XYZSpeed = Gs.DistanceToSteps(code.FSpeed) / 60d, XPos = Gs.DistanceToSteps(code.XDestination), YPos = Gs.DistanceToSteps(code.YDestination), ZPos = Gs.DistanceToSteps(code.ZDestination) };
                         //cncDevice.SendReport(szk.GetDataBytes());
