@@ -15,7 +15,6 @@
     using TeensyCncManager.HidWrapper;
     using TeensyCncManager.ViewModelUtils;
     using TeensyCNCManager.Core.Extensions;
-    using System.Text;
 
     public class CNCViewModel : ViewModelBase, IState
     {
@@ -97,19 +96,25 @@
                         if (PreprocessedGCodes.Count > Progress)
                         {
                             cncDevice.SendReport(PreprocessedGCodes[(int)Progress].code);
-                            Gs.DeviceQueueLength++;
+                            Gs.DeviceQueueLength += PreprocessedGCodes[(int)Progress].code.Length;
                             var code = GParser.Parse(PreprocessedGCodes[(int)Progress].code, LastPreprocessedGCode ?? new G00());
                             LastPreprocessedGCode = code;
                             //var szk = new LinearMovementCommand { LineNumber = (int)Progress, XYZSpeed = Gs.DistanceToSteps(code.FSpeed.HasValue ? code.FSpeed.Value : 0) / 60d, XPos = Gs.DistanceToSteps(code.XDestination), YPos = Gs.DistanceToSteps(code.YDestination), ZPos = Gs.DistanceToSteps(code.ZDestination) };
                             Progress++;
                             //cncDevice.SendReport(szk.GetDataBytes());
                         }
-                    }                    
+                        else
+                        {
+                            Gs.IsRunning = false;
+                            Gs.Progress = 0; 
+                        }
+                    }
 
                     if (!Gs.IsRunning && ProcessingGCodeList.Any())
                     {
-                        cncDevice.SendReport(ProcessingGCodeList.Dequeue());
-                        Gs.DeviceQueueLength++;
+                        var str = ProcessingGCodeList.Dequeue();
+                        cncDevice.SendReport(str);
+                        Gs.DeviceQueueLength += str.Length;
                         //var code = GParser.Parse(ProcessingGCodeList.Dequeue(), new G00());
                         //var szk = new ImmediateLinearMovementCommand { XYZSpeed = Gs.DistanceToSteps(code.FSpeed) / 60d, XPos = Gs.DistanceToSteps(code.XDestination), YPos = Gs.DistanceToSteps(code.YDestination), ZPos = Gs.DistanceToSteps(code.ZDestination) };
                         //cncDevice.SendReport(szk.GetDataBytes());
@@ -238,9 +243,9 @@
             get
             {
                 return IsConnected && !IsRunning && DeviceEngineState != EngineState.EmergencyStopped &&
-                    XPosition == XDestination && YPosition == YDestination && ZPosition == ZDestination; 
+                    XPosition == XDestination && YPosition == YDestination && ZPosition == ZDestination;
                 //&&
-                  //  APosition == ADestination && BPosition == BDestination && CPosition == CDestination;
+                //  APosition == ADestination && BPosition == BDestination && CPosition == CDestination;
             }
         }
 

@@ -23,31 +23,29 @@
             }
             else
             {
-                switch (gcodeMatches.Cast<Match>().Last().Value)
+                switch (gcodeMatches.Cast<Match>().Last().Value.ToUpper())
                 {
                     case "G0":
                     case "G00":
-                    case "g0":
-                    case "g00":
                         result = new G00();
                         break;
                     case "G1":
                     case "G01":
-                    case "g1":
-                    case "g01":
                         result = new G01();
                         break;
                     case "G2":
                     case "G02":
-                    case "g2":
-                    case "g02":
                         result = new G02();
                         break;
                     case "G3":
                     case "G03":
-                    case "g3":
-                    case "g03":
                         result = new G03();
+                        break;
+                    case "G90":
+                        result = new G90();
+                        break;
+                    case "G91":
+                        result = new G91();
                         break;
                     default:
                         result = CloneCode(current);

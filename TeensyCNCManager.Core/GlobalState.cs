@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using System.Reflection;
     using System.Windows;
     using System.Xml.Serialization;
     using TeensyCNCManager.Core.Extensions;
@@ -164,16 +165,21 @@
             return (decimal)(((double)steps / StepsPerRevolution) * LeadscrewPitch);
         }
 
-        public string Save()
+        public void Save()
         {
+            var dir = new DirectoryInfo(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
+
+            foreach (var file in dir.EnumerateFiles("options.*.xml"))
+            {
+                file.Delete();
+            }
+
             var formatter = new XmlSerializer(GetType());
 
             using (var fs = new FileStream($"options.{DateTimeOffset.Now.ToUnixTimeSeconds()}.xml", FileMode.OpenOrCreate))
             {
                 formatter.Serialize(fs, this);
             }
-
-            return "";
         }
 
         public static GlobalState Load()
@@ -183,7 +189,7 @@
 
             string path = Directory.GetCurrentDirectory();
             var directory = new DirectoryInfo(path);
-            if (directory.GetFiles().Where(x=>x.Name.StartsWith("options.")).Count() > 0)
+            if (directory.GetFiles().Where(x => x.Name.StartsWith("options.")).Count() > 0)
             {
                 var myFile = (from f in directory.GetFiles()
                               where f.Name.StartsWith("options.")

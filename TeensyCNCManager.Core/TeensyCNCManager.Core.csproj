@@ -55,6 +55,8 @@
     <Compile Include="Commands\Out\SetZeroCommand.cs" />
     <Compile Include="Commands\In\StatusReport.cs" />
     <Compile Include="Commands\BaseCommand.cs" />
+    <Compile Include="GCode\G91.cs" />
+    <Compile Include="GCode\G90.cs" />
     <Compile Include="GCode\G03.cs" />
     <Compile Include="GCode\G02.cs" />
     <Compile Include="GCode\GCodePreprocessor.cs" />
