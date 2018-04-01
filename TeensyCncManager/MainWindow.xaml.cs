@@ -64,17 +64,20 @@ namespace TeensyCncManager
 
         private void Button_PreprocessGCode_OnClick(object sender, RoutedEventArgs e)
         {
-            vm.AddToLog("GCode Preprocessing Started");
-
-            Observable.Start(
-                () =>
-                {
-                    var preprop = new GCodePreprocessor();
-                    vm.PreprocessedGCodes = preprop.Preprocess(vm.GCode, new G00 { FSpeed = vm.Gs.DefaultSpeed }, vm.Gs.LeadscrewPitch / vm.Gs.StepsPerRevolution, vm.Gs.DefaultSpeed).ToList();
-                    vm.MovementPoints = preprop.MovementPoints.ToArray();
-                    vm.AddToLog("GCode Preprocessing Finished");
-                    vm.ProgressMaximum = vm.PreprocessedGCodes.Count;
-                });
+            //vm.AddToLog("GCode Reposting");
+            vm.PostedGCode = vm.GCode;
+            vm.AddToLog("GCode Posted");
+            vm.ProgressMaximum = vm.PostedGCode.Count;
+            //Observable.Start(
+             //   () =>
+              //  {
+               //     vm.PostedGCode = vm.GCode;
+                    //var preprop = new GCodePreprocessor();
+                    //vm.PreprocessedGCodes = preprop.Preprocess(vm.GCode, new G00 { FSpeed = vm.Gs.DefaultSpeed }, vm.Gs.LeadscrewPitch / vm.Gs.StepsPerRevolution, vm.Gs.DefaultSpeed).ToList();
+                    //vm.MovementPoints = preprop.MovementPoints.ToArray();
+                //    vm.AddToLog("GCode Posted");
+                 //   vm.ProgressMaximum = vm.PostedGCode.Count;
+                //});
         }
 
         public void Connect(int connectionId, object target)

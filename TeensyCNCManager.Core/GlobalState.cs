@@ -29,6 +29,9 @@
         public List<string> GCode { get; set; }
 
         [XmlIgnore]
+        public List<string> PostedGCode { get; set; }
+
+        [XmlIgnore]
         public long ProgressMaximum { get; set; }
 
         [XmlIgnore]
@@ -85,8 +88,8 @@
         [XmlIgnore]
         public FixedSizedQueue<string> Log { get; set; }
 
-        [XmlIgnore]
-        public List<SCodeLine> PreprocessedGCodes { get; set; }
+       // [XmlIgnore]
+       // public List<SCodeLine> PreprocessedGCodes { get; set; }
 
         [XmlIgnore]
         public IGcode LastPreprocessedGCode { get; set; }
@@ -145,7 +148,8 @@
 
         public GlobalState()
         {
-            PreprocessedGCodes = new List<SCodeLine>();
+            //PreprocessedGCodes = new List<SCodeLine>();
+            PostedGCode = new List<string>();
             GCode = new List<string>();
         }
 

@@ -203,22 +203,11 @@
 
                 </TabItem>
                 <TabItem Header="Preprocessed">
-                    <DataGrid AlternatingRowBackground="AliceBlue" ItemsSource="{Binding PreprocessedGCodes, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" AutoGenerateColumns="False" Style="{StaticResource DataGridStyle}">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="№" Binding="{Binding lineNumber, Mode=OneWay}" Width="50" >
-                                <DataGridTextColumn.CellStyle>
-                                    <Style TargetType="DataGridCell">
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding DeviceLineNumber}" Value="0">
-                                                <Setter Property="Foreground" Value="Aquamarine"></Setter>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </DataGridTextColumn.CellStyle>
-                            </DataGridTextColumn>
-                            <DataGridTextColumn Header="G-Code Frame" Binding="{Binding code, Mode=OneWay}" Width="*" />
-                        </DataGrid.Columns>
-                    </DataGrid>
+                    <avalonEdit:TextEditor xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit" Name="PostedGCode" FontFamily="Consolas" FontSize="10pt" Margin="-1,0,1,0" ShowLineNumbers="True" >
+                        <i:Interaction.Behaviors>
+                            <extensions:AvalonEditBehaviour BindingText="{Binding PostedGCode, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource ListToStringConverter}}"/>
+                        </i:Interaction.Behaviors>
+                    </avalonEdit:TextEditor>
                 </TabItem>
                 <TabItem Header="2D plot">
                     <Grid>

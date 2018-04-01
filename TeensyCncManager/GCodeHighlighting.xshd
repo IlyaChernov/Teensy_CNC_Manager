@@ -15,7 +15,7 @@
     </Rule>
 
     <Rule foreground="Orange" fontWeight="bold">
-      ([Gg])(0?(1|2))
+      ([Gg])(0?(1|2|90|91))
     </Rule>
 
     <Rule foreground="Green" fontWeight="bold">

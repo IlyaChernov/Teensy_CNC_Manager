@@ -10,6 +10,7 @@
         bool IsRunning { get; set; }
 
         List<string> GCode { get; set; }
+        List<string> PostedGCode { get; set; }
 
         long ProgressMaximum { get; set; }
 
@@ -71,7 +72,7 @@
 
         EngineState DeviceEngineState { get; set; }
 
-        List<SCodeLine> PreprocessedGCodes { get; set; }
+        //List<SCodeLine> PreprocessedGCodes { get; set; }
 
         decimal StepsToDistance(long steps);
     }

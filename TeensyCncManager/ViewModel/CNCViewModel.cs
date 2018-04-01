@@ -93,11 +93,11 @@
 
                     if (Gs.IsRunning && Gs.IsConnected && Gs.DeviceQueueLength < Gs.DefaultQueueSize)
                     {
-                        if (PreprocessedGCodes.Count > Progress)
+                        if (PostedGCode.Count > Progress)
                         {
-                            cncDevice.SendReport(PreprocessedGCodes[(int)Progress].code);
-                            Gs.DeviceQueueLength += PreprocessedGCodes[(int)Progress].code.Length;
-                            var code = GParser.Parse(PreprocessedGCodes[(int)Progress].code, LastPreprocessedGCode ?? new G00());
+                            cncDevice.SendReport(PostedGCode[(int)Progress]);
+                            Gs.DeviceQueueLength += PostedGCode[(int)Progress].Length;
+                            var code = GParser.Parse(PostedGCode[(int)Progress], LastPreprocessedGCode ?? new G00());
                             LastPreprocessedGCode = code;
                             //var szk = new LinearMovementCommand { LineNumber = (int)Progress, XYZSpeed = Gs.DistanceToSteps(code.FSpeed.HasValue ? code.FSpeed.Value : 0) / 60d, XPos = Gs.DistanceToSteps(code.XDestination), YPos = Gs.DistanceToSteps(code.YDestination), ZPos = Gs.DistanceToSteps(code.ZDestination) };
                             Progress++;
@@ -253,7 +253,7 @@
         {
             get
             {
-                return (IsConnected && PreprocessedGCodes.Any() && DeviceEngineState == EngineState.Running) || IsRunning;
+                return (IsConnected && PostedGCode.Any() && DeviceEngineState == EngineState.Running) || IsRunning;
             }
         }
 
@@ -297,6 +297,19 @@
             set
             {
                 Gs.GCode = value;
+                OnPropertyChangedAuto();
+            }
+        }
+
+        public List<string> PostedGCode
+        {
+            get
+            {
+                return Gs.PostedGCode;
+            }
+            set
+            {
+                Gs.PostedGCode = value;
                 OnPropertyChangedAuto();
             }
         }
@@ -604,18 +617,19 @@
             }
         }
 
-        public List<SCodeLine> PreprocessedGCodes
-        {
-            get
-            {
-                return Gs.PreprocessedGCodes;
-            }
-            set
-            {
-                Gs.PreprocessedGCodes = value;
-                OnPropertyChangedAuto();
-            }
-        }
+        //[Obsolete("",true)]
+        //public List<SCodeLine> PreprocessedGCodes
+        //{
+        //    get
+        //    {
+        //        return Gs.PreprocessedGCodes;
+        //    }
+        //    set
+        //    {
+        //        Gs.PreprocessedGCodes = value;
+        //        OnPropertyChangedAuto();
+        //    }
+        //}
 
         public IGcode LastPreprocessedGCode
         {
