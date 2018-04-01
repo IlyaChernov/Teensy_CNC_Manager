@@ -33,7 +33,7 @@
             InitializeHID(Gs.CNCDeviceHIDPath);
             //Log 
             Gs.Log = new FixedSizedQueue<string> { Limit = 7 };
-            Gs.ProcessingGCode = new Queue<string>(); // new List<string>();
+            Gs.ProcessingGCode = new Queue<string>();
             Gs.Log.QueueChanged += Log_QueueChanged;
             PropertyChanged += CNCViewModel_PropertyChanged;
         }
@@ -97,11 +97,9 @@
                         {
                             cncDevice.SendReport(PostedGCode[(int)Progress]);
                             Gs.DeviceQueueLength += PostedGCode[(int)Progress].Length;
-                            var code = GParser.Parse(PostedGCode[(int)Progress], LastPreprocessedGCode ?? new G00());
-                            LastPreprocessedGCode = code;
-                            //var szk = new LinearMovementCommand { LineNumber = (int)Progress, XYZSpeed = Gs.DistanceToSteps(code.FSpeed.HasValue ? code.FSpeed.Value : 0) / 60d, XPos = Gs.DistanceToSteps(code.XDestination), YPos = Gs.DistanceToSteps(code.YDestination), ZPos = Gs.DistanceToSteps(code.ZDestination) };
-                            Progress++;
-                            //cncDevice.SendReport(szk.GetDataBytes());
+                            //var code = GParser.Parse(PostedGCode[(int)Progress], LastPreprocessedGCode ?? new G00());
+                            //LastPreprocessedGCode = code;                            
+                            Progress++;                            
                         }
                         else
                         {
@@ -115,9 +113,6 @@
                         var str = ProcessingGCodeList.Dequeue();
                         cncDevice.SendReport(str);
                         Gs.DeviceQueueLength += str.Length;
-                        //var code = GParser.Parse(ProcessingGCodeList.Dequeue(), new G00());
-                        //var szk = new ImmediateLinearMovementCommand { XYZSpeed = Gs.DistanceToSteps(code.FSpeed) / 60d, XPos = Gs.DistanceToSteps(code.XDestination), YPos = Gs.DistanceToSteps(code.YDestination), ZPos = Gs.DistanceToSteps(code.ZDestination) };
-                        //cncDevice.SendReport(szk.GetDataBytes());
                     }
 
                     return;
@@ -617,32 +612,18 @@
             }
         }
 
-        //[Obsolete("",true)]
-        //public List<SCodeLine> PreprocessedGCodes
+       // public IGcode LastPreprocessedGCode
         //{
         //    get
         //    {
-        //        return Gs.PreprocessedGCodes;
+        //        return Gs.LastPreprocessedGCode;
         //    }
         //    set
         //    {
-        //        Gs.PreprocessedGCodes = value;
+        //        Gs.LastPreprocessedGCode = value;
         //        OnPropertyChangedAuto();
         //    }
         //}
-
-        public IGcode LastPreprocessedGCode
-        {
-            get
-            {
-                return Gs.LastPreprocessedGCode;
-            }
-            set
-            {
-                Gs.LastPreprocessedGCode = value;
-                OnPropertyChangedAuto();
-            }
-        }
 
         public long StepsPerRevolution
         {
@@ -695,162 +676,6 @@
                 OnPropertyChangedAuto();
             }
         }
-
-        //public long XPositionSteps
-        //{
-        //    get
-        //    {
-        //        return Gs.XPositionSteps;
-        //    }
-        //    set
-        //    {
-        //        Gs.XPositionSteps = value;
-        //        OnPropertyChangedAuto();
-        //    }
-        //}
-
-        //public long YPositionSteps
-        //{
-        //    get
-        //    {
-        //        return Gs.YPositionSteps;
-        //    }
-        //    set
-        //    {
-        //        Gs.YPositionSteps = value;
-        //        OnPropertyChangedAuto();
-        //    }
-        //}
-
-        //public long ZPositionSteps
-        //{
-        //    get
-        //    {
-        //        return Gs.ZPositionSteps;
-        //    }
-        //    set
-        //    {
-        //        Gs.ZPositionSteps = value;
-        //        OnPropertyChangedAuto();
-        //    }
-        //}
-
-        //public long APositionSteps
-        //{
-        //    get
-        //    {
-        //        return Gs.APositionSteps;
-        //    }
-        //    set
-        //    {
-        //        Gs.APositionSteps = value;
-        //        OnPropertyChangedAuto();
-        //    }
-        //}
-
-        //public long BPositionSteps
-        //{
-        //    get
-        //    {
-        //        return Gs.BPositionSteps;
-        //    }
-        //    set
-        //    {
-        //        Gs.BPositionSteps = value;
-        //        OnPropertyChangedAuto();
-        //    }
-        //}
-
-        //public long CPositionSteps
-        //{
-        //    get
-        //    {
-        //        return Gs.CPositionSteps;
-        //    }
-        //    set
-        //    {
-        //        Gs.CPositionSteps = value;
-        //        OnPropertyChangedAuto();
-        //    }
-        //}
-
-        //public long XDestinationSteps
-        //{
-        //    get
-        //    {
-        //        return Gs.XDestinationSteps;
-        //    }
-        //    set
-        //    {
-        //        Gs.XDestinationSteps = value;
-        //        OnPropertyChangedAuto();
-        //    }
-        //}
-
-        //public long YDestinationSteps
-        //{
-        //    get
-        //    {
-        //        return Gs.YDestinationSteps;
-        //    }
-        //    set
-        //    {
-        //        Gs.YDestinationSteps = value;
-        //        OnPropertyChangedAuto();
-        //    }
-        //}
-
-        //public long ZDestinationSteps
-        //{
-        //    get
-        //    {
-        //        return Gs.ZDestinationSteps;
-        //    }
-        //    set
-        //    {
-        //        Gs.ZDestinationSteps = value;
-        //        OnPropertyChangedAuto();
-        //    }
-        //}
-
-        //public long ADestinationSteps
-        //{
-        //    get
-        //    {
-        //        return Gs.ADestinationSteps;
-        //    }
-        //    set
-        //    {
-        //        Gs.ADestinationSteps = value;
-        //        OnPropertyChangedAuto();
-        //    }
-        //}
-
-        //public long BDestinationSteps
-        //{
-        //    get
-        //    {
-        //        return Gs.BDestinationSteps;
-        //    }
-        //    set
-        //    {
-        //        Gs.BDestinationSteps = value;
-        //        OnPropertyChangedAuto();
-        //    }
-        //}
-
-        //public long CDestinationSteps
-        //{
-        //    get
-        //    {
-        //        return Gs.CDestinationSteps;
-        //    }
-        //    set
-        //    {
-        //        Gs.CDestinationSteps = value;
-        //        OnPropertyChangedAuto();
-        //    }
-        //}
 
         private void ZeroDimension(object obj)
         {

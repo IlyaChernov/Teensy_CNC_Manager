@@ -7,8 +7,6 @@
     {
         public StatusReport(byte[] dataBytes) : base(dataBytes) { }
 
-        //public int LineNumber { get; set; }
-
         public EngineState EngineState { get; set; }
 
         public int QueueLength { get; set; }

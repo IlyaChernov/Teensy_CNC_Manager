@@ -44,10 +44,6 @@ namespace TeensyCncManager
                     GCodeEditor.SyntaxHighlighting = HighlightingLoader.Load(reader, HighlightingManager.Instance);
                 }
             }
-
-            //var ri = new RadialInterpolation(new Point3D(0, 0, 0), new Point3D(30, -17.32050808, 20), 20d, RadialInterpolationDirection.CounterClockWise);
-            //ri.GetArcPointDeg(60d);
-            //var pts = ri.GetArcPoints(1.5 / 400, 0.00001);
         }
 
         private void Button_OpenGCodeFile_OnClick(object sender, RoutedEventArgs e)
@@ -63,21 +59,10 @@ namespace TeensyCncManager
         }
 
         private void Button_PreprocessGCode_OnClick(object sender, RoutedEventArgs e)
-        {
-            //vm.AddToLog("GCode Reposting");
+        {           
             vm.PostedGCode = vm.GCode;
             vm.AddToLog("GCode Posted");
-            vm.ProgressMaximum = vm.PostedGCode.Count;
-            //Observable.Start(
-             //   () =>
-              //  {
-               //     vm.PostedGCode = vm.GCode;
-                    //var preprop = new GCodePreprocessor();
-                    //vm.PreprocessedGCodes = preprop.Preprocess(vm.GCode, new G00 { FSpeed = vm.Gs.DefaultSpeed }, vm.Gs.LeadscrewPitch / vm.Gs.StepsPerRevolution, vm.Gs.DefaultSpeed).ToList();
-                    //vm.MovementPoints = preprop.MovementPoints.ToArray();
-                //    vm.AddToLog("GCode Posted");
-                 //   vm.ProgressMaximum = vm.PostedGCode.Count;
-                //});
+            vm.ProgressMaximum = vm.PostedGCode.Count;           
         }
 
         public void Connect(int connectionId, object target)

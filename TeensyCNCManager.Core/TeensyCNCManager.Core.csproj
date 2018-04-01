@@ -48,9 +48,8 @@
     <Compile Include="Commands\Out\ImmediateLinearMovementCommand.cs" />
     <Compile Include="Commands\Out\LinearMovementCommand.cs" />
     <Compile Include="Commands\In\PositionsReport.cs" />
-    <Compile Include="EEngneState.cs" />
+    <Compile Include="EngneState.cs" />
     <Compile Include="Extensions\EngineStateToColorConverter.cs" />
-    <Compile Include="Extensions\SCodeLine.cs" />
     <Compile Include="FixedSizedQueue.cs" />
     <Compile Include="Commands\Out\SetZeroCommand.cs" />
     <Compile Include="Commands\In\StatusReport.cs" />
@@ -59,7 +58,6 @@
     <Compile Include="GCode\G90.cs" />
     <Compile Include="GCode\G03.cs" />
     <Compile Include="GCode\G02.cs" />
-    <Compile Include="GCode\GCodePreprocessor.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="GCode\CodeAttribute.cs" />
     <Compile Include="GCode\CodeParameterAttribute.cs" />

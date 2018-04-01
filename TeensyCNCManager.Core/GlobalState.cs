@@ -87,13 +87,7 @@
 
         [XmlIgnore]
         public FixedSizedQueue<string> Log { get; set; }
-
-       // [XmlIgnore]
-       // public List<SCodeLine> PreprocessedGCodes { get; set; }
-
-        [XmlIgnore]
-        public IGcode LastPreprocessedGCode { get; set; }
-
+        
         [XmlIgnore]
         public IEnumerable<KeyValuePair<string, string>> HidDevices { get; set; }
 
@@ -109,46 +103,9 @@
         public double DefaultSpeed { get; set; }
 
         public double DefaultQueueSize { get; set; }
-
-        //[XmlIgnore]
-        //public long XPositionSteps { get; set; }
-
-        //[XmlIgnore]
-        //public long YPositionSteps { get; set; }
-
-        //[XmlIgnore]
-        //public long ZPositionSteps { get; set; }
-
-        //[XmlIgnore]
-        //public long APositionSteps { get; set; }
-
-        //[XmlIgnore]
-        //public long BPositionSteps { get; set; }
-
-        //[XmlIgnore]
-        //public long CPositionSteps { get; set; }
-
-        //[XmlIgnore]
-        //public long XDestinationSteps { get; set; }
-
-        //[XmlIgnore]
-        //public long YDestinationSteps { get; set; }
-
-        //[XmlIgnore]
-        //public long ZDestinationSteps { get; set; }
-
-        //[XmlIgnore]
-        //public long ADestinationSteps { get; set; }
-
-        //[XmlIgnore]
-        //public long BDestinationSteps { get; set; }
-
-        //[XmlIgnore]
-        //public long CDestinationSteps { get; set; }
-
+      
         public GlobalState()
-        {
-            //PreprocessedGCodes = new List<SCodeLine>();
+        {          
             PostedGCode = new List<string>();
             GCode = new List<string>();
         }

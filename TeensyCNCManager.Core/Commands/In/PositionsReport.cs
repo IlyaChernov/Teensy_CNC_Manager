@@ -89,22 +89,6 @@
             //gs.ADestination = gs.StepsToDistance(ADestinationSteps);
             //gs.BDestination = gs.StepsToDistance(BDestinationSteps);
             //gs.CDestination = gs.StepsToDistance(CDestinationSteps);
-
-            //gs.XPositionSteps = XSteps;
-            //gs.YPositionSteps = YSteps;
-            //gs.ZPositionSteps = ZSteps;
-            //gs.APositionSteps = ASteps;
-            //gs.BPositionSteps = BSteps;
-            //gs.CPositionSteps = CSteps;
-
-            //gs.XDestinationSteps = XDestinationSteps;
-            //gs.YDestinationSteps = YDestinationSteps;
-            //gs.ZDestinationSteps = ZDestinationSteps;
-            //gs.ADestinationSteps = ADestinationSteps;
-            //gs.BDestinationSteps = BDestinationSteps;
-            //gs.CDestinationSteps = CDestinationSteps;
-
-
         }
     }
 }

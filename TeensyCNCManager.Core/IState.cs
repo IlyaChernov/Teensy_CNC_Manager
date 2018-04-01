@@ -41,38 +41,12 @@
         //decimal BDestination { get; set; }
 
         //decimal CDestination { get; set; }
-
-        //long XPositionSteps { get; set; }
-
-        //long YPositionSteps { get; set; }
-
-        //long ZPositionSteps { get; set; }
-
-        //long APositionSteps { get; set; }
-
-        //long BPositionSteps { get; set; }
-
-        //long CPositionSteps { get; set; }
-
-        //long XDestinationSteps { get; set; }
-
-        //long YDestinationSteps { get; set; }
-
-        //long ZDestinationSteps { get; set; }
-
-        //long ADestinationSteps { get; set; }
-
-        //long BDestinationSteps { get; set; }
-
-        //long CDestinationSteps { get; set; }
-
+       
         int DeviceQueueLength { get; set; }
 
         int DeviceLineNumber { get; set; }
 
-        EngineState DeviceEngineState { get; set; }
-
-        //List<SCodeLine> PreprocessedGCodes { get; set; }
+        EngineState DeviceEngineState { get; set; }       
 
         decimal StepsToDistance(long steps);
     }

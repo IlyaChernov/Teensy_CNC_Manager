@@ -48,7 +48,7 @@
 
         public byte[] GetDataBytes()
         {
-            return WritePayload(WriteHeader(new MemoryStream(new byte[64]))).ToArray(); //new byte[64]
+            return WritePayload(WriteHeader(new MemoryStream(new byte[64]))).ToArray();
         }
 
         protected virtual void ReadPayload()
