@@ -17,11 +17,11 @@
 
         string FileName { get; set; }
 
-        decimal XPosition { get; set; }
+        float XPosition { get; set; }
 
-        decimal YPosition { get; set; }
+        float YPosition { get; set; }
 
-        decimal ZPosition { get; set; }
+        float ZPosition { get; set; }
 
         //decimal APosition { get; set; }
 
@@ -29,11 +29,11 @@
 
         //decimal CPosition { get; set; }
 
-        decimal XDestination { get; set; }
+        float XDestination { get; set; }
 
-        decimal YDestination { get; set; }
+        float YDestination { get; set; }
 
-        decimal ZDestination { get; set; }
+        float ZDestination { get; set; }
 
         //decimal ADestination { get; set; }
 
@@ -41,11 +41,11 @@
 
         //decimal CDestination { get; set; }
 
-        long XPositionSteps { get; set; }
+        //long XPositionSteps { get; set; }
 
-        long YPositionSteps { get; set; }
+        //long YPositionSteps { get; set; }
 
-        long ZPositionSteps { get; set; }
+        //long ZPositionSteps { get; set; }
 
         //long APositionSteps { get; set; }
 
@@ -53,11 +53,11 @@
 
         //long CPositionSteps { get; set; }
 
-        long XDestinationSteps { get; set; }
+        //long XDestinationSteps { get; set; }
 
-        long YDestinationSteps { get; set; }
+        //long YDestinationSteps { get; set; }
 
-        long ZDestinationSteps { get; set; }
+        //long ZDestinationSteps { get; set; }
 
         //long ADestinationSteps { get; set; }
 

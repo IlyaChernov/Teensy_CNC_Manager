@@ -24,7 +24,7 @@
 
         private double speed;
 
-        private decimal distance;
+        private float distance;
 
         public CNCViewModel()
         {
@@ -106,7 +106,7 @@
                         else
                         {
                             Gs.IsRunning = false;
-                            Gs.Progress = 0; 
+                            Gs.Progress = 0;
                         }
                     }
 
@@ -340,7 +340,7 @@
             }
         }
 
-        public decimal XPosition
+        public float XPosition
         {
             get
             {
@@ -356,7 +356,7 @@
             }
         }
 
-        public decimal YPosition
+        public float YPosition
         {
             get
             {
@@ -372,7 +372,7 @@
             }
         }
 
-        public decimal ZPosition
+        public float ZPosition
         {
             get
             {
@@ -436,7 +436,7 @@
         //    }
         //}
 
-        public decimal XDestination
+        public float XDestination
         {
             get
             {
@@ -448,7 +448,7 @@
             }
         }
 
-        public decimal YDestination
+        public float YDestination
         {
             get
             {
@@ -460,7 +460,7 @@
             }
         }
 
-        public decimal ZDestination
+        public float ZDestination
         {
             get
             {
@@ -570,7 +570,7 @@
             }
         }
 
-        public decimal Distance
+        public float Distance
         {
             get
             {
@@ -682,44 +682,44 @@
             }
         }
 
-        public long XPositionSteps
-        {
-            get
-            {
-                return Gs.XPositionSteps;
-            }
-            set
-            {
-                Gs.XPositionSteps = value;
-                OnPropertyChangedAuto();
-            }
-        }
+        //public long XPositionSteps
+        //{
+        //    get
+        //    {
+        //        return Gs.XPositionSteps;
+        //    }
+        //    set
+        //    {
+        //        Gs.XPositionSteps = value;
+        //        OnPropertyChangedAuto();
+        //    }
+        //}
 
-        public long YPositionSteps
-        {
-            get
-            {
-                return Gs.YPositionSteps;
-            }
-            set
-            {
-                Gs.YPositionSteps = value;
-                OnPropertyChangedAuto();
-            }
-        }
+        //public long YPositionSteps
+        //{
+        //    get
+        //    {
+        //        return Gs.YPositionSteps;
+        //    }
+        //    set
+        //    {
+        //        Gs.YPositionSteps = value;
+        //        OnPropertyChangedAuto();
+        //    }
+        //}
 
-        public long ZPositionSteps
-        {
-            get
-            {
-                return Gs.ZPositionSteps;
-            }
-            set
-            {
-                Gs.ZPositionSteps = value;
-                OnPropertyChangedAuto();
-            }
-        }
+        //public long ZPositionSteps
+        //{
+        //    get
+        //    {
+        //        return Gs.ZPositionSteps;
+        //    }
+        //    set
+        //    {
+        //        Gs.ZPositionSteps = value;
+        //        OnPropertyChangedAuto();
+        //    }
+        //}
 
         //public long APositionSteps
         //{
@@ -760,44 +760,44 @@
         //    }
         //}
 
-        public long XDestinationSteps
-        {
-            get
-            {
-                return Gs.XDestinationSteps;
-            }
-            set
-            {
-                Gs.XDestinationSteps = value;
-                OnPropertyChangedAuto();
-            }
-        }
+        //public long XDestinationSteps
+        //{
+        //    get
+        //    {
+        //        return Gs.XDestinationSteps;
+        //    }
+        //    set
+        //    {
+        //        Gs.XDestinationSteps = value;
+        //        OnPropertyChangedAuto();
+        //    }
+        //}
 
-        public long YDestinationSteps
-        {
-            get
-            {
-                return Gs.YDestinationSteps;
-            }
-            set
-            {
-                Gs.YDestinationSteps = value;
-                OnPropertyChangedAuto();
-            }
-        }
+        //public long YDestinationSteps
+        //{
+        //    get
+        //    {
+        //        return Gs.YDestinationSteps;
+        //    }
+        //    set
+        //    {
+        //        Gs.YDestinationSteps = value;
+        //        OnPropertyChangedAuto();
+        //    }
+        //}
 
-        public long ZDestinationSteps
-        {
-            get
-            {
-                return Gs.ZDestinationSteps;
-            }
-            set
-            {
-                Gs.ZDestinationSteps = value;
-                OnPropertyChangedAuto();
-            }
-        }
+        //public long ZDestinationSteps
+        //{
+        //    get
+        //    {
+        //        return Gs.ZDestinationSteps;
+        //    }
+        //    set
+        //    {
+        //        Gs.ZDestinationSteps = value;
+        //        OnPropertyChangedAuto();
+        //    }
+        //}
 
         //public long ADestinationSteps
         //{
@@ -866,24 +866,24 @@
         private void ManualGCodeMinus(object obj)
         {
             ProcessingGCodeList.Clear();
-            ProcessingGCodeList.Enqueue(string.Format(((string)obj), Gs.StepsToDistance(XPositionSteps) - Distance, Gs.StepsToDistance(YPositionSteps) - Distance, Gs.StepsToDistance(ZPositionSteps) - Distance, Speed));
+            ProcessingGCodeList.Enqueue(string.Format(((string)obj), XPosition - Distance, YPosition - Distance, ZPosition - Distance, Speed));
         }
         private void ManualGCodePlus(object obj)
         {
             ProcessingGCodeList.Clear();
-            ProcessingGCodeList.Enqueue(string.Format(((string)obj), Gs.StepsToDistance(XPositionSteps) + Distance, Gs.StepsToDistance(YPositionSteps) + Distance, Gs.StepsToDistance(ZPositionSteps) + Distance, Speed));
+            ProcessingGCodeList.Enqueue(string.Format(((string)obj), XPosition + Distance, YPosition + Distance, ZPosition + Distance, Speed));
         }
 
         private void ManualGCodePlusMinus(object obj)
         {
             ProcessingGCodeList.Clear();
-            ProcessingGCodeList.Enqueue(string.Format(((string)obj), Gs.StepsToDistance(XPositionSteps) + Distance, Gs.StepsToDistance(YPositionSteps) - Distance, 0, Speed));
+            ProcessingGCodeList.Enqueue(string.Format(((string)obj),XPosition + Distance, YPosition - Distance, 0, Speed));
         }
 
         private void ManualGCodeMinusPlus(object obj)
         {
             ProcessingGCodeList.Clear();
-            ProcessingGCodeList.Enqueue(string.Format(((string)obj), Gs.StepsToDistance(XPositionSteps) - Distance, Gs.StepsToDistance(YPositionSteps) + Distance, 0, Speed));
+            ProcessingGCodeList.Enqueue(string.Format(((string)obj), XPosition - Distance, YPosition + Distance, 0, Speed));
         }
 
         private void ManualHomeGCode(object obj)

@@ -38,40 +38,40 @@
         public string FileName { get; set; }
 
         [XmlIgnore]
-        public decimal XPosition { get; set; }
+        public float XPosition { get; set; }
 
         [XmlIgnore]
-        public decimal YPosition { get; set; }
+        public float YPosition { get; set; }
 
         [XmlIgnore]
-        public decimal ZPosition { get; set; }
+        public float ZPosition { get; set; }
+
+        //[XmlIgnore]
+        //public decimal APosition { get; set; }
+
+        //[XmlIgnore]
+        //public decimal BPosition { get; set; }
+
+        //[XmlIgnore]
+        //public decimal CPosition { get; set; }
 
         [XmlIgnore]
-        public decimal APosition { get; set; }
+        public float XDestination { get; set; }
 
         [XmlIgnore]
-        public decimal BPosition { get; set; }
+        public float YDestination { get; set; }
 
         [XmlIgnore]
-        public decimal CPosition { get; set; }
+        public float ZDestination { get; set; }
 
-        [XmlIgnore]
-        public decimal XDestination { get; set; }
+        //[XmlIgnore]
+        //public decimal ADestination { get; set; }
 
-        [XmlIgnore]
-        public decimal YDestination { get; set; }
+        //[XmlIgnore]
+        //public decimal BDestination { get; set; }
 
-        [XmlIgnore]
-        public decimal ZDestination { get; set; }
-
-        [XmlIgnore]
-        public decimal ADestination { get; set; }
-
-        [XmlIgnore]
-        public decimal BDestination { get; set; }
-
-        [XmlIgnore]
-        public decimal CDestination { get; set; }
+        //[XmlIgnore]
+        //public decimal CDestination { get; set; }
 
         [XmlIgnore]
         public int DeviceQueueLength { get; set; }
@@ -107,41 +107,41 @@
 
         public double DefaultQueueSize { get; set; }
 
-        [XmlIgnore]
-        public long XPositionSteps { get; set; }
+        //[XmlIgnore]
+        //public long XPositionSteps { get; set; }
 
-        [XmlIgnore]
-        public long YPositionSteps { get; set; }
+        //[XmlIgnore]
+        //public long YPositionSteps { get; set; }
 
-        [XmlIgnore]
-        public long ZPositionSteps { get; set; }
+        //[XmlIgnore]
+        //public long ZPositionSteps { get; set; }
 
-        [XmlIgnore]
-        public long APositionSteps { get; set; }
+        //[XmlIgnore]
+        //public long APositionSteps { get; set; }
 
-        [XmlIgnore]
-        public long BPositionSteps { get; set; }
+        //[XmlIgnore]
+        //public long BPositionSteps { get; set; }
 
-        [XmlIgnore]
-        public long CPositionSteps { get; set; }
+        //[XmlIgnore]
+        //public long CPositionSteps { get; set; }
 
-        [XmlIgnore]
-        public long XDestinationSteps { get; set; }
+        //[XmlIgnore]
+        //public long XDestinationSteps { get; set; }
 
-        [XmlIgnore]
-        public long YDestinationSteps { get; set; }
+        //[XmlIgnore]
+        //public long YDestinationSteps { get; set; }
 
-        [XmlIgnore]
-        public long ZDestinationSteps { get; set; }
+        //[XmlIgnore]
+        //public long ZDestinationSteps { get; set; }
 
-        [XmlIgnore]
-        public long ADestinationSteps { get; set; }
+        //[XmlIgnore]
+        //public long ADestinationSteps { get; set; }
 
-        [XmlIgnore]
-        public long BDestinationSteps { get; set; }
+        //[XmlIgnore]
+        //public long BDestinationSteps { get; set; }
 
-        [XmlIgnore]
-        public long CDestinationSteps { get; set; }
+        //[XmlIgnore]
+        //public long CDestinationSteps { get; set; }
 
         public GlobalState()
         {

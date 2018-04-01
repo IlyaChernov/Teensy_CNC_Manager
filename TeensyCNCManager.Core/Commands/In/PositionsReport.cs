@@ -7,11 +7,11 @@
     {
         public PositionsReport(byte[] dataBytes) : base(dataBytes) { }
 
-        public int XSteps { get; set; }
+        public float XSteps { get; set; }
 
-        public int YSteps { get; set; }
+        public float YSteps { get; set; }
 
-        public int ZSteps { get; set; }
+        public float ZSteps { get; set; }
 
         //public int ASteps { get; set; }
 
@@ -20,11 +20,11 @@
         //public int CSteps { get; set; }
 
 
-        public int XDestinationSteps { get; set; }
+        public float XDestinationSteps { get; set; }
 
-        public int YDestinationSteps { get; set; }
+        public float YDestinationSteps { get; set; }
 
-        public int ZDestinationSteps { get; set; }
+        public float ZDestinationSteps { get; set; }
 
         //public int ADestinationSteps { get; set; }
 
@@ -36,16 +36,16 @@
         {
             var reader = new BinaryReader(new MemoryStream(DataBytes.Skip((sizeof(int) * 1)).ToArray()));
 
-            XSteps = reader.ReadInt32();
-            YSteps = reader.ReadInt32();
-            ZSteps = reader.ReadInt32();
+            XSteps = reader.ReadSingle(); //.ReadInt32();
+            YSteps = reader.ReadSingle();
+            ZSteps = reader.ReadSingle();
             //ASteps = reader.ReadInt32();
             //BSteps = reader.ReadInt32();
             //CSteps = reader.ReadInt32();
 
-            XDestinationSteps = reader.ReadInt32();
-            YDestinationSteps = reader.ReadInt32();
-            ZDestinationSteps = reader.ReadInt32();
+            XDestinationSteps = reader.ReadSingle();
+            YDestinationSteps = reader.ReadSingle();
+            ZDestinationSteps = reader.ReadSingle();
             //ADestinationSteps = reader.ReadInt32();
             //BDestinationSteps = reader.ReadInt32();
             //CDestinationSteps = reader.ReadInt32();
@@ -76,30 +76,30 @@
         public override void Act(IState gs)
         {
             base.Act(gs);
-            gs.XPosition = gs.StepsToDistance(XSteps);
-            gs.YPosition = gs.StepsToDistance(YSteps);
-            gs.ZPosition = gs.StepsToDistance(ZSteps);
+            gs.XPosition = XSteps; // gs.StepsToDistance(XSteps);
+            gs.YPosition = YSteps;
+            gs.ZPosition =ZSteps;
             //gs.APosition = gs.StepsToDistance(ASteps);
             //gs.BPosition = gs.StepsToDistance(BSteps);
             //gs.CPosition = gs.StepsToDistance(CSteps);
             
-            gs.XDestination = gs.StepsToDistance(XDestinationSteps);
-            gs.YDestination = gs.StepsToDistance(YDestinationSteps);
-            gs.ZDestination = gs.StepsToDistance(ZDestinationSteps);
+            gs.XDestination = XDestinationSteps;
+            gs.YDestination = YDestinationSteps;
+            gs.ZDestination = ZDestinationSteps;
             //gs.ADestination = gs.StepsToDistance(ADestinationSteps);
             //gs.BDestination = gs.StepsToDistance(BDestinationSteps);
             //gs.CDestination = gs.StepsToDistance(CDestinationSteps);
 
-            gs.XPositionSteps = XSteps;
-            gs.YPositionSteps = YSteps;
-            gs.ZPositionSteps = ZSteps;
+            //gs.XPositionSteps = XSteps;
+            //gs.YPositionSteps = YSteps;
+            //gs.ZPositionSteps = ZSteps;
             //gs.APositionSteps = ASteps;
             //gs.BPositionSteps = BSteps;
             //gs.CPositionSteps = CSteps;
 
-            gs.XDestinationSteps = XDestinationSteps;
-            gs.YDestinationSteps = YDestinationSteps;
-            gs.ZDestinationSteps = ZDestinationSteps;
+            //gs.XDestinationSteps = XDestinationSteps;
+            //gs.YDestinationSteps = YDestinationSteps;
+            //gs.ZDestinationSteps = ZDestinationSteps;
             //gs.ADestinationSteps = ADestinationSteps;
             //gs.BDestinationSteps = BDestinationSteps;
             //gs.CDestinationSteps = CDestinationSteps;
