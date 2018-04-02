@@ -96,11 +96,11 @@
 
         public string CNCDeviceHIDPath { get; set; }
 
-        public double LeadscrewPitch { get; set; }
+        //public double LeadscrewPitch { get; set; }
 
-        public long StepsPerRevolution { get; set; }
+        //public long StepsPerRevolution { get; set; }
 
-        public double DefaultSpeed { get; set; }
+        //public double DefaultSpeed { get; set; }
 
         public double DefaultQueueSize { get; set; }
       
@@ -116,15 +116,15 @@
         }
 
 
-        public int? DistanceToSteps(double distance)
-        {
-            return (int)(distance / (LeadscrewPitch / StepsPerRevolution));
-        }
+        //public int? DistanceToSteps(double distance)
+        //{
+        //    return (int)(distance / (LeadscrewPitch / StepsPerRevolution));
+        //}
 
-        public decimal StepsToDistance(long steps)
-        {
-            return (decimal)(((double)steps / StepsPerRevolution) * LeadscrewPitch);
-        }
+        //public decimal StepsToDistance(long steps)
+        //{
+        //    return (decimal)(((double)steps / StepsPerRevolution) * LeadscrewPitch);
+        //}
 
         public void Save()
         {

@@ -625,44 +625,44 @@
         //    }
         //}
 
-        public long StepsPerRevolution
-        {
-            get
-            {
-                return Gs.StepsPerRevolution;
-            }
-            set
-            {
-                Gs.StepsPerRevolution = value;
-                OnPropertyChangedAuto();
-            }
-        }
+        //public long StepsPerRevolution
+        //{
+        //    get
+        //    {
+        //        return Gs.StepsPerRevolution;
+        //    }
+        //    set
+        //    {
+        //        Gs.StepsPerRevolution = value;
+        //        OnPropertyChangedAuto();
+        //    }
+        //}
 
-        public double LeadscrewPitch
-        {
-            get
-            {
-                return Gs.LeadscrewPitch;
-            }
-            set
-            {
-                Gs.LeadscrewPitch = value;
-                OnPropertyChangedAuto();
-            }
-        }
+        //public double LeadscrewPitch
+        //{
+        //    get
+        //    {
+        //        return Gs.LeadscrewPitch;
+        //    }
+        //    set
+        //    {
+        //        Gs.LeadscrewPitch = value;
+        //        OnPropertyChangedAuto();
+        //    }
+        //}
 
-        public double DefaultSpeed
-        {
-            get
-            {
-                return Gs.DefaultSpeed;
-            }
-            set
-            {
-                Gs.DefaultSpeed = value;
-                OnPropertyChangedAuto();
-            }
-        }
+        //public double DefaultSpeed
+        //{
+        //    get
+        //    {
+        //        return Gs.DefaultSpeed;
+        //    }
+        //    set
+        //    {
+        //        Gs.DefaultSpeed = value;
+        //        OnPropertyChangedAuto();
+        //    }
+        //}
 
         public double DefaultQueueSize
         {
@@ -736,9 +736,9 @@
             Gs.Log.EnqueueWithLimit(DateTime.Now.ToLongTimeString() + " : " + msg);
         }
 
-        public decimal StepsToDistance(long steps)
-        {
-            return Gs.StepsToDistance(steps);
-        }
+        //public decimal StepsToDistance(long steps)
+        //{
+        //    return Gs.StepsToDistance(steps);
+        //}
     }
 }

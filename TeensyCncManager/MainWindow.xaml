@@ -235,24 +235,14 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="26" />
                                 <RowDefinition Height="26" />
-                                <RowDefinition Height="26" />
-                                <RowDefinition Height="26" />
-                                <RowDefinition Height="26" />
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <Label Content="CNC Device" Grid.Row="0" Grid.Column="0" Style="{StaticResource OptionsTitleText}" />
-                            <Label Content="Steps per rev." Grid.Row="1" Grid.Column="0" Style="{StaticResource OptionsTitleText}" />
-                            <Label Content="Leadscrew pitch" Grid.Row="2" Grid.Column="0" Style="{StaticResource OptionsTitleText}" />
-                            <Label Content="Default speed" Grid.Row="3" Grid.Column="0" Style="{StaticResource OptionsTitleText}" />
-                            <Label Content="Device buffer size" Grid.Row="4" Grid.Column="0" Style="{StaticResource OptionsTitleText}" />
+                            <Label Content="Device buffer size" Grid.Row="1" Grid.Column="0" Style="{StaticResource OptionsTitleText}" />
 
                             <ComboBox Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Margin="1,1,0,1" HorizontalAlignment="Left" Width="262" ItemsSource="{Binding HIDDevices, UpdateSourceTrigger=PropertyChanged}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding CNCDeviceHIDPath, UpdateSourceTrigger=PropertyChanged}"></ComboBox>
                             <Button Grid.Column="3" Grid.Row="0" Content="{StaticResource Reload}" Margin="1" Click="ButtonReloadCNCDevicesList_OnClick"></Button>
-
-                            <TextBox Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="{Binding StepsPerRevolution, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource OptionsTextBox}" />
-                            <TextBox Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="{Binding LeadscrewPitch, UpdateSourceTrigger=LostFocus}" Style="{StaticResource OptionsTextBox}" LostFocus="UIElement_OnLostFocus" />
-                            <TextBox Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text="{Binding DefaultSpeed, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource OptionsTextBox}" />
-                            <TextBox Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" Text="{Binding DefaultQueueSize, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource OptionsTextBox}" />
+                            <TextBox Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="{Binding DefaultQueueSize, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource OptionsTextBox}" />
 
                         </Grid>
                     </ScrollViewer>

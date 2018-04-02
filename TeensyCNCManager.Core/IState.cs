@@ -48,6 +48,6 @@
 
         EngineState DeviceEngineState { get; set; }       
 
-        decimal StepsToDistance(long steps);
+        //decimal StepsToDistance(long steps);
     }
 }
